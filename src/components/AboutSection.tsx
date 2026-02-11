@@ -22,8 +22,8 @@ const AboutSection = () => {
           <div className="relative lg:col-span-2">
             <div className="relative overflow-hidden border border-border/50">
               <img
-                src={selfPortrait}
-                alt="Portrait"
+                src={self-portrait}
+                alt="Johnny's Portrait"
                 className="aspect-[3/4] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
