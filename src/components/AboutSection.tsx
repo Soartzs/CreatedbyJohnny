@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutPortrait from "@/assets/about-portrait.jpg";
+import selfPortrait from "@/assets/self-portrait.jpg";
 
 const stats = [
   { value: "8+", label: "Years Experience" },
@@ -22,7 +22,7 @@ const AboutSection = () => {
           <div className="relative lg:col-span-2">
             <div className="relative overflow-hidden border border-border/50">
               <img
-                src={self-portrait}
+                src={selfPortrait}
                 alt="Johnny's Portrait"
                 className="aspect-[3/4] w-full object-cover"
               />
