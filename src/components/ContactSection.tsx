@@ -22,7 +22,7 @@ const ContactSection = () => {
           </p>
 
           <a
-            href="mailto:hello@pixelstudio.com"
+            href="mailto:contact@createdbyjohnny.com"
             className="group inline-flex items-center gap-3 rounded-none border border-primary bg-primary px-10 py-4 font-mono text-sm uppercase tracking-widest text-primary-foreground transition-all hover:neon-glow-strong"
           >
             <Mail size={18} />
