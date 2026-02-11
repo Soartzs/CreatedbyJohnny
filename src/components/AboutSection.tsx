@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import selfPortrait from "@/assets/self-portrait.jpeg";
 
 const stats = [
-  { value: "8+", label: "Years Experience" },
-  { value: "120+", label: "Projects Completed" },
-  { value: "45+", label: "Happy Clients" },
+  { value: "2+", label: "Years Experience" },
+  { value: "15+", label: "Projects Completed" },
+  { value: "8+", label: "Happy Clients" },
 ];
 
 const AboutSection = () => {
