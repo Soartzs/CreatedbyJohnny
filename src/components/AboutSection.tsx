@@ -22,7 +22,7 @@ const AboutSection = () => {
           <div className="relative lg:col-span-2">
             <div className="relative overflow-hidden border border-border/50">
               <img
-                src={import.meta.env.BASE_URL + "src/assets/self.jpeg"}
+                src={self-portrait}
                 alt="Portrait"
                 className="aspect-[3/4] w-full object-cover"
               />
