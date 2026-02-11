@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import selfPortrait from "@/assets/self-portrait.jpg";
+import selfPortrait from "@/assets/self-portrait.jpeg";
 
 const stats = [
   { value: "8+", label: "Years Experience" },
