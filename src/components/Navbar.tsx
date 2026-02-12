@@ -3,15 +3,23 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Home", href: "/#/" },
-  { label: "About", href: "/#/about" },
-  { label: "Services", href: "/#/services" },
-  { label: "Work", href: "/#/work" },
-  { label: "Contact", href: "/#/contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Work", href: "#work" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <motion.nav
@@ -21,7 +29,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl"
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="/#/" className="font-mono text-xl font-bold tracking-tight text-primary neon-text">
+        <a href="#home" onClick={() => scrollToSection("home")} className="font-mono text-xl font-bold tracking-tight text-primary neon-text">
           Createdby<span className="text-foreground">Johnny</span>
         </a>
 
@@ -31,7 +39,11 @@ const Navbar = () => {
             <li key={item.label}>
               <a
                 href={item.href}
-                className="font-mono text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href.substring(1));
+                }}
+                className="font-mono text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary cursor-pointer"
               >
                 {item.label}
               </a>
@@ -40,8 +52,12 @@ const Navbar = () => {
         </ul>
 
         <a
-          href="/#/contact"
-          className="hidden rounded-none border border-primary bg-transparent px-6 py-2 font-mono text-sm uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:neon-glow md:inline-block"
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("contact");
+          }}
+          className="hidden rounded-none border border-primary bg-transparent px-6 py-2 font-mono text-sm uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:neon-glow md:inline-block cursor-pointer"
         >
           Let's Talk
         </a>
@@ -56,8 +72,11 @@ const Navbar = () => {
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="border-t border-border/50 bg-background md:hidden"
+          animate={{ opacitye) => {
+                    e.preventDefault();
+                    scrollToSection(item.href.substring(1));
+                  }}
+                  className="font-mono text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary cursor-pointer
         >
           <ul className="flex flex-col gap-4 px-6 py-6">
             {navItems.map((item) => (

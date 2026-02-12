@@ -3,6 +3,13 @@ import { ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Background image */}
@@ -34,18 +41,18 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href="/#/work"
-              className="inline-block rounded-none border border-primary bg-primary px-8 py-3 font-mono text-sm uppercase tracking-widest text-primary-foreground transition-all hover:neon-glow-strong"
+            <button
+              onClick={() => scrollToSection("work")}
+              className="inline-block rounded-none border border-primary bg-primary px-8 py-3 font-mono text-sm uppercase tracking-widest text-primary-foreground transition-all hover:neon-glow-strong cursor-pointer"
             >
               View Work
-            </a>
-            <a
-              href="/#/about"
-              className="inline-block rounded-none border border-border px-8 py-3 font-mono text-sm uppercase tracking-widest text-foreground transition-all hover:border-primary hover:text-primary"
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="inline-block rounded-none border border-border px-8 py-3 font-mono text-sm uppercase tracking-widest text-foreground transition-all hover:border-primary hover:text-primary cursor-pointer"
             >
               About Me
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>
