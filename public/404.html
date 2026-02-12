@@ -4,9 +4,17 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script type="text/javascript">
-      // Redirect to the main page of your name with the path preserved
+      // Redirect to the app root
       const path = window.location.pathname;
-      window.location.replace(path.replace(/^\/CreatedbyJohnny/, '') || '/CreatedbyJohnny/');
+      const segments = path.split('/').filter(s => s);
+      
+      // If path is just "/" or empty, redirect to root
+      if (segments.length === 0) {
+        window.location.replace('/');
+      } else {
+        // For single page app, always redirect to root
+        window.location.replace('/');
+      }
     </script>
   </head>
   <body></body>
