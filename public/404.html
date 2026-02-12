@@ -2,20 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Redirecting...</title>
+    <title>Page Redirect</title>
     <script type="text/javascript">
-      // Redirect to the app root
-      const path = window.location.pathname;
-      const segments = path.split('/').filter(s => s);
+      // Save the current path for later restoration
+      const redirect = function() {
+        var pathname = window.location.pathname;
+        // Split the pathname by / and get the parts
+        var parts = pathname.split('/').filter(part => part !== '');
+        
+        if (parts.length > 0) {
+          // Store the path without the domain in sessionStorage
+          sessionStorage.redirect = pathname;
+          // Redirect to the app
+          window.location.href = '/';
+        }
+      };
       
-      // If path is just "/" or empty, redirect to root
-      if (segments.length === 0) {
-        window.location.replace('/');
-      } else {
-        // For single page app, always redirect to root
-        window.location.replace('/');
-      }
+      // Redirect immediately
+      redirect();
     </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>

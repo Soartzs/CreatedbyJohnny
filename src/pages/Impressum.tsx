@@ -95,7 +95,7 @@ const Impressum = () => {
               <h2 className="mb-4 text-2xl font-bold text-primary">Datenschutz</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Bitte beachten Sie unsere <a href="/datenschutz" className="text-primary hover:text-primary/80 transition-colors underline">Datenschutzerklärung</a>, in der wir Sie ausführlich über den Umgang mit Ihren persönlichen Daten informieren.
+                  Bitte beachten Sie unsere <a href="/#/datenschutz" className="text-primary hover:text-primary/80 transition-colors underline">Datenschutzerklärung</a>, in der wir Sie ausführlich über den Umgang mit Ihren persönlichen Daten informieren.
                 </p>
               </div>
             </div>
@@ -117,7 +117,7 @@ const Impressum = () => {
           {/* Back Link */}
           <div className="mt-16 border-t border-border/50 pt-8">
             <a
-              href="/#contact"
+              href="/#/"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-mono text-sm uppercase tracking-widest"
             >
               ← Zurück zur Website

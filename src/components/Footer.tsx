@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-border/50 pt-6 flex justify-center">
           <a
-            href="/impressum"
+            href="/#/impressum"
             className="font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
           >
             Impressum

@@ -184,7 +184,7 @@ const Datenschutz = () => {
           {/* Back Link */}
           <div className="mt-16 border-t border-border/50 pt-8">
             <a
-              href="/#contact"
+              href="/#/"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-mono text-sm uppercase tracking-widest"
             >
               ← Zurück zur Website
