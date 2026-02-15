@@ -1,4 +1,4 @@
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion, useSpring, useMotionValue } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { MouseEvent } from "react";
 import heroBg from "@/assets/hero-bg.jpg"; // Keeping the import but we might need to adjust if we use it differently or keep it.
@@ -6,6 +6,10 @@ import heroBg from "@/assets/hero-bg.jpg"; // Keeping the import but we might ne
 const HeroSection = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 120 };
+  const springX = useSpring(mouseX, springConfig);
+  const springY = useSpring(mouseY, springConfig);
 
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     const { left, top } = currentTarget.getBoundingClientRect();
@@ -32,17 +36,17 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
-      {/* Mouse Spotlight Effect */}
+      {/* Cursor Trail Effect */}
       <motion.div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute h-[300px] w-[300px] rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              650px circle at ${mouseX}px ${mouseY}px,
-              hsl(var(--primary) / 0.15),
-              transparent 80%
-            )
-          `,
+          x: springX,
+          y: springY,
+          translateX: "-50%",
+          translateY: "-50%",
+          background: "radial-gradient(circle, hsl(var(--primary) / 0.4) 0%, transparent 70%)",
+          filter: "blur(20px)",
+          mixBlendMode: "screen",
         }}
       />
 
