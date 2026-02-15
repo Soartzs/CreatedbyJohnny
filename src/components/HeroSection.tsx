@@ -1,6 +1,6 @@
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import React, { MouseEvent } from "react";
+import { MouseEvent } from "react";
 import heroBg from "@/assets/hero-bg.jpg"; // Keeping the import but we might need to adjust if we use it differently or keep it.
 
 const HeroSection = () => {
@@ -39,7 +39,7 @@ const HeroSection = () => {
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(var(--primary-rgb), 0.15),
+              hsl(var(--primary) / 0.15),
               transparent 80%
             )
           `,
