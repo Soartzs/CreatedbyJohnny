@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const clients = [
-  "DIONYSOS", "WLW", "ENTRACT", "1337", "FUTURAVISIO", 
+  "DIONYSOS", "WLW", "ENTRACT", "1337", "FUTURAVISIO",
   "DIONYSOS", "WLW", "ENTRACT", "1337", "FUTURAVISIO",
 ];
 
@@ -22,7 +22,7 @@ const LogoSlider = () => {
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="flex w-max gap-16 items-center"
+          className="flex w-max gap-16 items-center flex-nowrap"
         >
           {clients.map((name, i) => (
             <span
